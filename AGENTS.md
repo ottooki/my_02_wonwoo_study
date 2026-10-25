@@ -23,11 +23,11 @@ npx expo install --fix      # fix incompatible package versions
 
 Run lint and typecheck before declaring any task done.
 
-## Navigation & Routing
+## Navigation
 
-- Use **Expo Router** for all navigation. Routes live in `src/app/` — every file there is a screen, `_layout.tsx` files define navigators. Keep non-route code (components, hooks, utils) outside `src/app/`.
-- Import `Link`, `router`, and `useLocalSearchParams` from `expo-router`.
-- Docs: https://docs.expo.dev/router/introduction.md
+- 이 앱은 Expo Router를 쓰지 않는다. 화면이 적어서 `App.tsx`의 하단 탭 상태와 `Modal` 하나로 이동한다.
+- 화면은 `src/screens/`, 공용 UI는 `src/ui.tsx`, 데이터는 `src/store.tsx`(AsyncStorage), 날짜·반복·알림 계산은 `src/lib/`에 둔다.
+- `src/lib/` 의 순수 로직은 `npm test` (tests/*.test.ts) 로 검증한다.
 
 ## Building with EAS
 
